@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import com.lynden.gmapsfx.GoogleMapView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import tuev.konstantin.androidrescuer.mycomponenets.PhoneValidator?>
+
+<?import tuev.konstantin.androidrescuer.mycomponenets.ValueSaveTextField?>
+<StackPane fx:id="root" alignment="BOTTOM_RIGHT" minHeight="700.0" minWidth="700.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox spacing="10">
+    <ValueSaveTextField fx:id="phone" id="phone" prefHeight="55" minHeight="55" promptText="%phone" style="-fx-alignment: center">
+        <validators>
+            <PhoneValidator message="Phone not valid!">
+                <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;" />
+            </PhoneValidator>
+        </validators>
+        <font>
+            <Font size="34.0" />
+        </font>
+    </ValueSaveTextField>
+    <JFXPasswordField fx:id="pass" prefHeight="55" minHeight="55" promptText="%phone_pass" style="-fx-alignment: center">
+        <validators>
+            <RequiredFieldValidator message="Required!">
+                <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;" />
+            </RequiredFieldValidator>
+        </validators>
+        <font>
+            <Font size="34.0" />
+        </font>
+    </JFXPasswordField>
+        <GoogleMapView fx:id="mapView" prefWidth="700.0" />
+    </VBox>
+
+    <StackPane alignment="BOTTOM_LEFT" prefHeight="38.0" maxHeight="38.0" maxWidth="Infinity" style="-fx-background-color: transparent">
+        <VBox prefHeight="38.0" prefWidth="208.0" maxHeight="38.0" maxWidth="208.0" style="-fx-background-color: white;" />
+        <JFXCheckBox fx:id="autoRefresh" prefHeight="22.0" prefWidth="200.0" maxHeight="22.0" maxWidth="200.0" text="%auto_refresh">
+            <StackPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" />
+            </StackPane.margin></JFXCheckBox>
+    </StackPane>
+
+    <JFXButton fx:id="trace" buttonType="RAISED" prefHeight="40" prefWidth="100" style="-fx-text-fill:WHITE;-fx-background-color:#388e3c;-fx-font-size:14px;" text="%trace">
+        <graphic>
+            <FontAwesomeIconView fill="white" glyphName="LOCATION_ARROW" size="1.5em" />
+        </graphic>
+      <StackPane.margin>
+         <Insets bottom="16.0" left="52.0" right="52.0" />
+      </StackPane.margin>
+    </JFXButton>
+</StackPane>

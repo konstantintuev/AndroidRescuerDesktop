@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import tuev.konstantin.androidrescuer.mycomponenets.*?>
+<StackPane fx:id="root" alignment="TOP_CENTER" minHeight="700.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: white">
+    <VBox spacing="10">
+        <ValueSaveTextField fx:id="phone" id="phone" prefHeight="55" minHeight="55" promptText="%phone" style="-fx-alignment: center">
+            <validators>
+                <PhoneValidator message="Phone not valid!">
+                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;" />
+                </PhoneValidator>
+            </validators>
+         <font>
+            <Font size="34.0" />
+         </font>
+        </ValueSaveTextField>
+
+        <JFXPasswordField fx:id="pass" prefHeight="55" minHeight="55" promptText="%phone_pass" style="-fx-alignment: center">
+            <validators>
+                <RequiredFieldValidator message="Required!">
+                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;" />
+                </RequiredFieldValidator>
+            </validators>
+            <font>
+                <Font size="34.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="40"  />
+            </VBox.margin>
+        </JFXPasswordField>
+
+        <ListView fx:id="listOptions" maxHeight="Infinity" maxWidth="Infinity"
+                  layoutX="300" layoutY="50">
+
+            <StackPane minWidth="1050">
+                <Label styleClass="sub-label" text="%realtimelocation">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="realTimeLoc">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%location_on_wrong_pass">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="wrongPassLocation">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%pic_on_wrong_pass">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="wrongPassPic">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%backup_contacts">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="backupContacts" twoOptions="true">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%backup_folder">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="backupFolder" twoOptions="true">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%factory_reset">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="factoryReset" twoOptions="true" thirdField="format_internal">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%delete_internal_storage">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="deleteInternal" twoOptions="true">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%wifi_data">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="wifiData">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%location">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="location">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+
+            <StackPane>
+                <Label styleClass="sub-label" text="%mobile_data">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <MessageCombobox id="mobileData">
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </MessageCombobox>
+            </StackPane>
+        </ListView>
+
+        <StackPane alignment="CENTER_RIGHT">
+            <JFXButton prefWidth="100" prefHeight="40" buttonType="RAISED" text="%send" fx:id="send"
+                       style="-fx-text-fill:WHITE;-fx-background-color:#388e3c;-fx-font-size:14px;">
+                <graphic>
+                    <FontAwesomeIconView glyphName="SEND" size="1.5em" fill="white"/>
+                </graphic>
+            </JFXButton>
+            <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </padding>
+        </StackPane>
+    </VBox>
+   <padding>
+      <Insets bottom="11.0" left="11.0" right="11.0" />
+   </padding>
+</StackPane>

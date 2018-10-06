@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+<JFXListView fx:id="toolbarPopupList" onMouseClicked="#submit" prefHeight="130.0" prefWidth="307.0" styleClass="option-list-view" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="%info">
+        <graphic>
+            <StackPane>
+                <FontAwesomeIconView glyphName="INFO_CIRCLE" size="1.5em" styleClass="option-jfx-list-view-icon" />
+            </StackPane>
+        </graphic>
+    </Label>
+    <Label text="%grant_root">
+        <graphic>
+            <StackPane>
+                <FontAwesomeIconView glyphName="ANDROID" size="1.5em" styleClass="option-jfx-list-view-icon" />
+            </StackPane>
+        </graphic>
+    </Label>
+    <Label text="%exit">
+        <graphic>
+            <StackPane>
+                <FontAwesomeIconView glyphName="REPLY" size="1.5em" styleClass="option-jfx-list-view-icon" />
+            </StackPane>
+        </graphic>
+    </Label>
+</JFXListView>
